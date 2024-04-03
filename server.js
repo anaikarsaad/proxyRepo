@@ -9,7 +9,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const API_SERVICE_URL = "https://api.deafassistant.com";
-
+app.get("/", (req, res) => res.send("Express on Vercel"));
 app.use('/api', createProxyMiddleware({
   target: API_SERVICE_URL,
   changeOrigin: true,
